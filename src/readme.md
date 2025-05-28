@@ -23,7 +23,7 @@ Esta aplicación simula un coche utilizando el patrón de diseño **MVC (Modelo-
 
 ---
 
-## 🧠 Estructura MVC
+## Estructura MVC
 
 - **Modelo**:
 - `Coche`: contiene la lógica del avance y el llenado del tanque.
@@ -36,17 +36,6 @@ Esta aplicación simula un coche utilizando el patrón de diseño **MVC (Modelo-
 
 ---
 
-## JAVADOC
 
-Se ha documentado el código con **Javadoc**, incluyendo:
-
-- Descripción de cada clase y su función.
-- Explicación de los métodos y sus parámetros.
-- Instrucciones de uso.
-
-Puedes generar la documentación ejecutando:
-
-```bash
-javadoc -d doc *.java
 
 
