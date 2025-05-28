@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Esta aplicación simula un coche utilizando el patrón de diseño **MVC (Modelo-Vista-Controlador)**. El usuario puede realizar dos acciones principales:
+Esta aplicación simula un coche utilizando el patrón de diseño **MVC **. El usuario puede realizar dos acciones principales:
 
 - **Avanzar** una cierta cantidad de metros (disminuye la gasolina según la distancia y la velocidad).
 - **Poner gasolina**, añadiendo litros al tanque del coche.
