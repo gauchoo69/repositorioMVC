@@ -1,31 +1,36 @@
+package modelo;
+
+
 public class Car {
-    private String brand;
-    private int speed;
+    private motor motor;
+    private tanque tanque;
+    private double velocidad;
+    private double consumoPorMetro;
 
-    public Car(String brand) {
-        this.brand = brand;
-        this.speed = 0;
+    public Coche(double velocidad, double consumoPorMetro) {
+        this.motor = new motor();
+        this.tanque = new tanque();
+        this.velocidad = velocidad;
+        this.consumoPorMetro = consumoPorMetro;
     }
 
-    public String getBrand() {
-        return brand;
+    public String avanzar(double metros) {
+        double consumoNecesario = metros * velocidad * consumoPorMetro;
+        if (tanque.nivel() >= consumoNecesario) {
+            motor.encender();
+            motor.mover();
+            tanque.reducir(consumoNecesario);
+            return "El coche ha avanzado " + metros + " metros.";
+        } else {
+            return "No hay suficiente gasolina para avanzar.";
+        }
     }
 
-    public int getSpeed() {
-        return speed;
-    }
 
-    public void increaseSpeed(int amount) {
-        speed += amount;
-    }
-
-    public void decreaseSpeed(int amount) {
-        speed = Math.max(0, speed - amount);
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" + "brand='" + brand + '\'' + ", speed=" + speed + "}";
+    public String ponerGasolina(double litros) {
+        tanque.añade(litros);
+        return "Se añadieron " + litros + " litros de gasolina.";
     }
 }
+
 
