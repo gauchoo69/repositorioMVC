@@ -1,3 +1,35 @@
+```mermaid
+sequenceDiagram
+participant Usuario
+participant CocheVista
+participant CocheControlador
+participant Coche
+participant Tanque
+participant AlarmaRepostar
+
+    Usuario->>CocheVista: Selecciona "Avanzar"
+    CocheVista->>CocheControlador: avanzar(metros)
+    CocheControlador->>Coche: avanzar(metros)
+    Coche->>Tanque: nivel()
+    alt gasolina suficiente
+        Coche->>Tanque: reducir(consumo)
+        Coche->>Coche: notificarObservadores()
+        Coche->>AlarmaRepostar: actualizar(nivel)
+        alt nivel < 10
+            AlarmaRepostar->>CocheVista: Mostrar alerta "⚠️ Alerta: Repostar"
+        else nivel >= 10
+            AlarmaRepostar-->>Coche: No hace nada
+        end
+        Coche-->>CocheControlador: "El coche ha avanzado X metros"
+    else gasolina insuficiente
+        Coche-->>CocheControlador: "No hay suficiente gasolina"
+    end
+    CocheControlador-->>CocheVista: Mensaje correspondiente
+    CocheVista-->>Usuario: Muestra mensaje
+```
+
+
+
 # Práctica: Aplicación de Coche (MVC)
 
 ## Descripción
