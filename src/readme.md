@@ -16,7 +16,7 @@ participant AlarmaRepostar
         Coche->>Coche: notificarObservadores()
         Coche->>AlarmaRepostar: actualizar(nivel)
         alt nivel < 10
-            AlarmaRepostar->>CocheVista: Mostrar alerta "⚠️ Alerta: Repostar"
+            AlarmaRepostar->>CocheVista: Mostrar alerta " Alerta: Repostar"
         else nivel >= 10
             AlarmaRepostar-->>Coche: No hace nada
         end
